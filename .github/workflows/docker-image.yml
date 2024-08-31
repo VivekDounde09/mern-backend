@@ -7,14 +7,12 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout step
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
     
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:latest
@@ -29,4 +27,4 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: user/app:latest
+        tags: vickey18/mern-backend:latest
